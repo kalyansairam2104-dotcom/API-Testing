@@ -16,9 +16,15 @@ npm test
 
 This will execute the Playwright tests in the `tests/` directory.
 
-## Example Test
+## Configuration
 
-The `tests/api-example.spec.js` file contains a basic example of an API test using Playwright's request context to test a REST API endpoint.
+The `playwright.config.js` file contains the Playwright configuration, including test directory, base URL for API tests, and project settings.
+
+You can customize the base URL by setting the `BASE_URL` environment variable:
+
+```bash
+BASE_URL=https://your-api.com npm test
+```
 
 ## Adding More Tests
 
