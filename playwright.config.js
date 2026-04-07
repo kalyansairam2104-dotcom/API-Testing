@@ -9,7 +9,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: process.env.BASE_URL || 'https://jsonplaceholder.typicode.com',
+    baseURL: 'https://api.restful-api.dev',
     trace: 'on-first-retry',
   },
   projects: [
