@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import postReq from '../test-data/post-request.json';
 
 test('GET validation', async ({ request }, testInfo) => {
   // Example API test using Playwright's request context
@@ -25,3 +26,28 @@ test('GET validation', async ({ request }, testInfo) => {
     contentType: 'application/json'
   });
 });
+
+test('POST validation', async ({request}) => {
+
+  const response =  await request.post('/objects', { data: postReq })
+
+  //status code validation
+  expect(response.status()).toBe(200);
+
+  //const responseBody = await response.json();
+
+  //console.log({status: response.status(), body: responseBody, headers: response.headers()});
+
+
+});
+
+test('Auth GET validation', async({request}) => {
+
+  const response = await request.get('/collections');
+
+  expect(response.status()).toBe(200);
+
+
+});
+
+//{ headers: {'x-api-key': 'bef09ee8-264e-4dbd-94d7-124af29278cf'}}
